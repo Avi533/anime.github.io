@@ -1,141 +1,197 @@
- <!DOCTYPE html>
- <html>
- <head>
- 	<style type="text/css">
- 		*{
- 			 margin: 0px;
- 		 padding: 0px;
- 		 box-sizing: border-box;
- 		}
- 		body
- 		{
- 		 background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(255,0,0,1));
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<script src="https://kit.fontawesome.com/89790b3690.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+.modal
+		{
+			width: 100%;
+			height: 100%;
+			background-color:rgba(0,0,0,0.4);
+		 
+			position: absolute;
+			top:0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			display:none;
+	
+			 
+			 
+		}
+		.modal-content
+		{
+			width: 500px;
+			height: 300px;
+			background-color: white;
+			border-radius: 4px;
+		text-align: center;
+		padding: 20px;
+
+position: relative;
+		} 
+		input
+		{ display: block;
+
+		width: 50%;
+margin:15px auto;
+		 }
+		 .close
+		 {
+		 	position: absolute;
+		 	top: 0;
+		 	right: 14px;
+		 	font-size: 42px;
+		 	transform: rotate(45deg);
+		 	cursor: pointer;
+
+		 }
 
 
- 		}
- 		.name
- 		{
- 			font-size: 50px;
- 			font-family:Imprint MT Shadow;
- 			animation: spin 1s linear infinite;
- 			 
-		 	 
- 		}
- 		@keyframes spin
- 		{
- 			100%{ transform: rotate(360deg); }
 
 
- 		}
- 		.main
- 		{
- 			margin:100px auto;
- 			height: 800px;
- 			width: 600px;
- 			border-radius: 5%;
- 			background-color: rgba(66, 170, 245);
+	.A{
+			height:400px;
+			width: 400px;
+			  border-radius: 100px;
 
- 		}
- 		.H
- 		{
- 			height: 150px;
- 			width: 500px;	border-radius: 15px;
- 			transform: translate(46px,45px);
- 			background-color: rgba(230, 236, 237);
- 			text-align:right;
- 			font-size: 100px;
+margin:0px auto;
 
- 		}
- 		.r
- 		{transform: translate(46px,70px);
- 		
- 			height: 100px;
- 			width: 520px;
- 			 
- 			border-radius: 15px;
- 			text-align: center;
- 			line-height: 100px;
- 			font-size: 10px;
- 			
+			
+			 
+			 		
+		}
+		.B
+		{
+			height:400px;
+			width: 400px;
+			position: absolute;
+			top: 0px;
+			left: auto;
+text-align: center;
+line-height: 400px;
+font-style: italic;
+font-weight: bold;
+color: white;
+ border-radius: 100px;
+			 background-color: rgba(13,9,15,0.4);
+			 pointer-events: auto;
 
- 		}
- 		.r1
- 		{
- 			text-align: center;
- 			line-height: 65px;
- 			font-size: 50px;
- 			height: 65px;
- 			width:103px;
- 			background-color: rgba(230, 236, 237);
- 			float: left;
- 			margin-left: 26px;
- 			transform: translateX(-17px);
- 			border-radius: 10px;
- 			box-shadow: 10px 10px rgba(102, 101, 98,0.5);
- 		}
- 		.r2{
- 			transform: translate(0px,90px);
- 		
- 			height: 100px;
- 			width: 520px;
- 			 
- 			border-radius: 15px;
- 			 
+			 
+		}
 
- 		}
- 		.r21
- 		{
- 			text-align: center;
- 			line-height: 100px;
- 			font-size: 50px;
- 			height: 100px;
- 			width:102px;
- 			background-color: rgba(230, 236, 237);
- 			float: left;
- 			margin-left: 26px;
- 			transform: translate(-13px,-65px);
- 			
- 			border-radius: 10px;
- 			box-shadow: 10px 10px rgba(102, 101, 98,0.5);
+		.slide
+		{
+			height: 400px;
+			width: 100%;
+			background-color: red;
+			position: relative;
+			top:30px;
 
- 		}
+		}
+		.slide1{
 
- 	</style>
- 	<title></title>
- </head>
- <body>
- 	<marquee><span class="name">Avi</span>	</marquee>
- 	<div class="main">
- 		<div class="H">0
- 			
- 		</div>
- 		<div class="r">
- 			<div class="r1">&#8730;</div>
- 			<div class="r1"><span>X<sup>2</sup></span></div>
- 			<div class="r1">+/-</div>
- 			<div class="r1">C</div>
- 			<div class="r2">
- 				<div class="r21">7</div>
- 				<div class="r21">8</div>
- 				<div class="r21">9</div>
- 				<div class="r21">&#247;</div>
- 				<div class="r21" style="margin-top: 15px;">4</div>
- 				<div class="r21"  style="margin-top: 15px;">5</div>
- 				<div class="r21"  style="margin-top: 15px;">6</div>
- 				<div class="r21"  style="margin-top: 15px;">&#215;</div>
- 				<div class="r21" style="margin-top: 15px;">1</div>
- 				<div class="r21"  style="margin-top: 15px;">2</div>
- 				<div class="r21"  style="margin-top: 15px;">3</div>
- 				<div class="r21"  style="margin-top: 15px;">-</div>
- 				<div class="r21" style="margin-top: 15px;">0</div>
- 				<div class="r21"  style="margin-top: 15px;">.</div>
- 				<div class="r21"  style="margin-top: 15px;">+</div>
- 				<div class="r21"  style="margin-top: 15px;">=</div>
- 			</div>
+			height: 300px;
+			width: 300px;
+			background-color: black;
+			float: left;
+			 
+			 margin-left: 10%;
+			 margin-top: 3%;
+			 border-radius: 100%;
+			 transition: 1s;
+			}
+			 .slide1:hover
+			 {
+			 	transform: scale(1.2,1.2);
+			 	border-radius: 50px;
 
- 		</div>
- 		
- 	</div>
+			 }
+			 .fixe{
+			 	height: 200px;
+			 	width: 200px;
+			 	background-color: red;
+			 	position:fixed;
+			 	top: 50px;
+			 	left: 0px;
+			 }
+		 
+			 
+		
+	</style>
+	<title></title>
+</head>
+<body>
+	
+	 <div class="A">
+	 	<img src="LogoCodersAdda1.png" style="height: 400px; width: 400px;">
+	 	<div class="B">
+	 		<label>Avinash pal</label>
+	 		&nbsp;
+	 		&nbsp;
+	 		&nbsp;
+	 		
+	 		<button  id="trigger" style="height: 50px; cursor: pointer; width: 100px; border-radius: 10px; background-image: linear-gradient(to right,#61c4ca,#ffd200); ">Submit</button>
+	 		
+	 		 
+	 	</div>
+	 		 
+	 </div>
+	 <div class="fixe">
+	 	<a href=""><i class="fab fa-facebook"></i></a>
+	 </div>
+	 <div class="slide">
+	 	 
+	 	<div class="slide1"></div>
+	 	<div class="slide1"></div>
+	 	<div class="slide1"></div>
+	 	
+	 </div>
+	 <div class="modal">
+		<div class="modal-content">
+			<div class="close">+</div>
+			 <img src="protest.png" height="100px;" width="100px;" >
+			 <form>
+			 	<input type="" name="" placeholder="Name">
+			 	<input type="" name="" placeholder="Email">
+			 	 <button style="border-radius: 10px; height: 50px;width: 80px;">Submit</button>
+			 </form>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+	 	  	
+	 		/*document.getElementById('trigger').addEventListener('click',function(){
+	 			document.querySelector('.modal').style.display='flex';
+	 		});
+	 		document.getElementById("close1").addEventListener("click",function(){
+	 			document.querySelector(".modal").style.display='none';
+	 		})*/
+	 		 
+	 	
+	 		/*const trigger=document.querySelector('#trigger');
+	 		const modal=document.querySelector('.modal');
+	 		trigger.addEventListener('click',function()
+	 		{
+	 			 modal.display='block';
+
+	 		}) */
+	 		document.getElementById('trigger').addEventListener("click",function(){
+	 			document.querySelector('.modal').style.display='flex';
+
+	 		});
+	 		document.querySelector('.close').addEventListener("click",function(){
+	 			document.querySelector('.modal').style.display='none';
+	 		})
  
- </body>
- </html>
+	  
+	 </script>
+	 
+	  
+</body>
+</html>
