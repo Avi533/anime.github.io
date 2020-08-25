@@ -1,13 +1,77 @@
-<!DOCTYPE html>
-<html>
-<head>
-	
-	<script src="https://kit.fontawesome.com/89790b3690.js" crossorigin="anonymous"></script>
-	<style type="text/css">
-		*{
-			margin:0px;
-			padding: 0px;
-		}
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<style type="text/css">
+ 		 .heart {
+  width: 8rem;
+  height: 8rem;
+  margin-left: 100px;
+  background-color: #ee5253;
+  position: relative;
+  transform: rotate(45deg);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+  animation: hbeat 1s linear infinite;
+   position: absolute;
+  top:100px;
+  left: 600px;
+
+}
+
+.heart::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #ee5253;
+  position: absolute;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.heart::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #ee5253;
+  position: absolute;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes hbeat {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  20% {
+    transform: rotate(45deg) scale(1);
+  }
+  40% {
+    transform: rotate(45deg) scale(1.4);
+  }
+  60% {
+    transform: rotate(45deg) scale(1.2);
+  }
+  80% {
+    transform: rotate(45deg) scale(1.4);
+  }
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+}
+ 		*{
+ 			margin:0%;
+ 			padding: 0%;
+ 			box-sizing: border-box;
+ 		}
+ 		.html{
+ 			font-size: 62.5%;
+ 		}
+.B{
+	position: absolute;
+	top:400px;
+	left: 700px;
+
+}
 .modal
 		{
 			width: 100%;
@@ -19,28 +83,20 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			display:none;
-	
-			 
-			 
+			display:none;	 
 		}
+
 		.modal-content
 		{
 			width: 500px;
-			height: 300px;
-			background-color: white;
+			height: 500px;
+			background-color:white;
 			border-radius: 4px;
 		text-align: center;
 		padding: 20px;
 
 position: relative;
 		} 
-		input
-		{ display: block;
-
-		width: 50%;
-margin:15px auto;
-		 }
 		 .close
 		 {
 		 	position: absolute;
@@ -51,145 +107,65 @@ margin:15px auto;
 		 	cursor: pointer;
 
 		 }
+		 .close:hover{
+		 	 background-color: red;
+		 	  animation: spin 1s linear infinite;
 
+		 }
 
-
-
-	.A{
-			height:400px;
-			width: 400px;
-			  border-radius: 100px;
-
-margin:0px auto;
-
-			
-			 
-			 		
 		}
-		.B
+		@keyframes spin{
+			100%{transform: rotate(360deg);}
+		}
+		.so
 		{
-			height:400px;
-			width: 400px;
-			position: absolute;
-			top: 0px;
-			left: auto;
-text-align: center;
-line-height: 400px;
-font-style: italic;
-font-weight: bold;
-color: white;
- border-radius: 100px;
-			 background-color: rgba(13,9,15,0.4);
-			 pointer-events: auto;
-
-			 
-		}
-
-		.slide
-		{
-			height: 400px;
-			width: 100%;
-			background-color: red;
-			position: relative;
-			top:30px;
+			margin-top: 100px;
 
 		}
-		.slide1{
+ 	</style>
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-			height: 300px;
-			width: 300px;
-			background-color: black;
-			float: left;
-			 
-			 margin-left: 10%;
-			 margin-top: 3%;
-			 border-radius: 100%;
-			 transition: 1s;
-			}
-			 .slide1:hover
-			 {
-			 	transform: scale(1.2,1.2);
-			 	border-radius: 50px;
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-			 }
-			 .fixe{
-			 	height: 200px;
-			 	width: 200px;
-			 	background-color: red;
-			 	position:fixed;
-			 	top: 50px;
-			 	left: 0px;
-			 }
-		 
-			 
-		
-	</style>
-	<title></title>
-</head>
-<body>
-	
-	 <div class="A">
-	 	<img src="Logo.png" style="height: 400px; width: 400px;">
-	 	<div class="B">
-	 		<label>Avi pal</label>
-	 		&nbsp;
-	 		&nbsp;
-	 		&nbsp;
-	 		
-	 		<button  id="trigger" style="height: 50px; cursor: pointer; width: 100px; border-radius: 10px; background-image: linear-gradient(to right,#61c4ca,#ffd200); ">Submit</button>
-	 		
-	 		 
-	 	</div>
-	 		 
-	 </div>
-	 
-	 <div class="slide">
-	 	 
-	 	<div class="slide1"></div>
-	 	<div class="slide1"></div>
-	 	<div class="slide1"></div>
-	 	
-	 </div>
-	 <div class="modal">
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 	<title></title>
+ </head>
+  <body>
+  	
+ <div class="A">
+ 	<!-- <img src="derren.jpg" class="img-fluid"> -->
+ 	<div class="col-12" style="padding-top:75.094%;position:relative;"><iframe src="https://gifer.com/embed/7cC" width="100%" height="100%" style='position:absolute;top:0;left:0;' frameBorder="0" allowFullScreen></iframe></div><p><a href="https://gifer.com">via GIFER</a></p>
+		<div class="heart">
+				 
+	</div>
+ 	<div class="B">
+ 		<button id="trigger" class="btn-lg" style="background-color: rgba(231,82,148); color: white;">Click me</button>
+ 	</div>
+ 	
+
+ </div>
+ <div class="modal">
 		<div class="modal-content">
 			<div class="close">+</div>
-			 <img src="protest.png" height="100px;" width="100px;" >
-			 <form>
-			 	<input type="" name="" placeholder="Name">
-			 	<input type="" name="" placeholder="Email">
-			 	 <button style="border-radius: 10px; height: 50px;width: 80px;">Submit</button>
-			 </form>
+			
+			 <a href="https://www.animatedimages.org/cat-sorry-and-apology-1551.htm"><img src="https://www.animatedimages.org/data/media/1551/animated-sorry-and-apology-image-0025.gif" border="0" alt="animated-sorry-and-apology-image-0025" class="So" /></a>
 		</div>
 		
 	</div>
-	<script type="text/javascript">
-	 	  	
-	 		/*document.getElementById('trigger').addEventListener('click',function(){
-	 			document.querySelector('.modal').style.display='flex';
-	 		});
-	 		document.getElementById("close1").addEventListener("click",function(){
-	 			document.querySelector(".modal").style.display='none';
-	 		})*/
-	 		 
-	 	
-	 		/*const trigger=document.querySelector('#trigger');
-	 		const modal=document.querySelector('.modal');
-	 		trigger.addEventListener('click',function()
-	 		{
-	 			 modal.display='block';
 
-	 		}) */
-	 		document.getElementById('trigger').addEventListener("click",function(){
+ <script type="text/javascript">
+ 	document.getElementById('trigger').addEventListener("click",function(){
 	 			document.querySelector('.modal').style.display='flex';
 
 	 		});
 	 		document.querySelector('.close').addEventListener("click",function(){
 	 			document.querySelector('.modal').style.display='none';
 	 		})
- 
-	  
-	 </script>
-	 
-	  
-</body>
-</html>
+ </script>
+ </body>
+ </html>
